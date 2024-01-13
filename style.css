@@ -1,0 +1,46 @@
+.calculator {
+    display: flex;
+    flex-direction: column;
+    border: solid black;
+    width: 400px;
+    height: auto;
+}
+
+.screen {
+    border: solid black;
+    margin: 20px;
+    padding: 8px;
+    text-align: right;
+    font-weight: bolder;
+    font-size: 24px;
+    height: 120px;
+}
+
+.keypad {
+    display: flex;
+    gap: 10px;
+    margin: 20px;
+}
+
+.numpad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+
+}
+
+.zero-btn,
+.clear-btn {
+    grid-column: span 2;
+}
+
+.operators {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.keypad button {
+    min-width: 80px;
+    height: 80px;
+}
