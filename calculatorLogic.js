@@ -59,8 +59,7 @@ numbers.forEach(button => {
 operation.forEach(button => {
     button.addEventListener('click', () => {
         num1 = screen.textContent;
-        screen.innerText = screen.textContent + button.textContent;
-        startOfNum2 = screen.textContent.length;
+        screen.innerText = "";
         operator = button.textContent;
         operation.forEach(button => button.disabled = true);
     });
