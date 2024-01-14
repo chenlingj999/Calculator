@@ -40,3 +40,13 @@ function operate(num1, operator, num2) {
             alert("Unsupported Operator!")
     }
 }
+
+const numbers = document.querySelectorAll(".number");
+const operation = document.querySelectorAll(".operator");
+const screen = document.getElementById("screen");
+
+numbers.forEach(button => {
+    button.addEventListener('click', () => {
+        screen.innerText = screen.textContent + button.textContent;
+    });
+});
