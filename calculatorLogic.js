@@ -48,5 +48,15 @@ const screen = document.getElementById("screen");
 numbers.forEach(button => {
     button.addEventListener('click', () => {
         screen.innerText = screen.textContent + button.textContent;
+        operation.forEach(button => button.disabled = false)
     });
 });
+
+operation.forEach(button => {
+    button.addEventListener('click', () => {
+        num1 = screen.textContent;
+        screen.innerText = screen.textContent + button.textContent;
+        operation.forEach(button => button.disabled = true);
+    });
+});
+
