@@ -30,7 +30,7 @@ function operate(num1, operator, num2) {
             return subtract(num1, num2);
             break;
 
-        case "*":
+        case "x":
             return multiply(num1, num2);
             break;
 
@@ -70,4 +70,11 @@ equal.addEventListener('click', () => {
     let length = screen.textContent.length;
     num2 = screen.textContent.slice(startOfNum2);
     screen.innerText = operate(num1, operator, num2);
+});
+
+const clear = document.querySelector(".clear-btn");
+
+clear.addEventListener('click', () => {
+    screen.innerText = "";
+    operation.forEach(button => button.disabled = true);
 });
