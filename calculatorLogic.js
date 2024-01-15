@@ -82,7 +82,10 @@ operation.forEach(button => {
         }
         operation.forEach(button => {
             button.disabled = true;
-        });    
+        });  
+        if (!screen.textContent.includes('.')) {
+            decimal.disabled = false;
+        }
     });
 });
 
@@ -103,4 +106,15 @@ clear.addEventListener('click', () => {
     num1 = '';
     num2 = '';
     operator = '';
+});
+
+const decimal = document.querySelector(".decimal");
+
+decimal.addEventListener('click', () => {
+    if (screen.textContent) {
+        screen.innerText = screen.textContent + '.';
+    } else {
+        screen.innerText = "0.";
+    }
+    decimal.disabled = true;
 });
