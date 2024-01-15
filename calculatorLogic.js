@@ -50,8 +50,17 @@ const equal = document.querySelector(".equal");
 
 numbers.forEach(button => {
     button.addEventListener('click', () => {
+        if (button.classList.contains("newEquation")) {
+            screen.innerText = '';
+            numbers.forEach(btn => {
+                btn.classList.remove("newEquation");
+            });
+        }
         if (button.classList.contains("chaining")) {
             screen.innerText = button.textContent;
+            numbers.forEach(btn => {
+                btn.classList.remove("chaining");
+            });
         } else {
             screen.innerText = screen.textContent + button.textContent;
         }
@@ -95,6 +104,9 @@ equal.addEventListener('click', () => {
     screen.innerText = operate(num1, operator, num2);
     operation.forEach(button => {
         button.classList.remove("chaining");
+    });
+    numbers.forEach(button => {
+        button.classList.add("newEquation");
     });
 });
 
