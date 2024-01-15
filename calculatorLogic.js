@@ -100,4 +100,7 @@ const clear = document.querySelector(".clear-btn");
 clear.addEventListener('click', () => {
     screen.innerText = "";
     operation.forEach(button => button.disabled = true);
+    num1 = '';
+    num2 = '';
+    operator = '';
 });
