@@ -47,28 +47,52 @@ const numbers = document.querySelectorAll(".number");
 const operation = document.querySelectorAll(".operator");
 const screen = document.getElementById("screen");
 const equal = document.querySelector(".equal");
-let startOfNum2;
 
 numbers.forEach(button => {
     button.addEventListener('click', () => {
-        screen.innerText = screen.textContent + button.textContent;
+        if (button.classList.contains("chaining")) {
+            screen.innerText = button.textContent;
+        } else {
+            screen.innerText = screen.textContent + button.textContent;
+        }
         operation.forEach(button => button.disabled = false)
     });
 });
 
 operation.forEach(button => {
     button.addEventListener('click', () => {
-        num1 = screen.textContent;
-        screen.innerText = "";
-        operator = button.textContent;
-        operation.forEach(button => button.disabled = true);
+        if (button.classList.contains("chaining")) {
+            num2 = screen.textContent;
+            screen.innerText = operate(num1, operator, num2);
+            num1 = screen.innerText;
+            operator = button.textContent;
+            numbers.forEach(button => {
+                button.classList.add("chaining");
+            });
+        } else {
+            num1 = screen.textContent;
+            screen.innerText = "";
+            operator = button.textContent;
+            operation.forEach(button => {
+                button.classList.add("chaining");
+            });
+            numbers.forEach(button => {
+                button.classList.remove("chaining");
+            });
+        }
+        operation.forEach(button => {
+            button.disabled = true;
+        });    
     });
 });
 
 equal.addEventListener('click', () => {
     let length = screen.textContent.length;
-    num2 = screen.textContent.slice(startOfNum2);
+    num2 = screen.textContent;
     screen.innerText = operate(num1, operator, num2);
+    operation.forEach(button => {
+        button.classList.remove("chaining");
+    });
 });
 
 const clear = document.querySelector(".clear-btn");
