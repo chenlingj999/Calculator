@@ -99,7 +99,6 @@ operation.forEach(button => {
 });
 
 equal.addEventListener('click', () => {
-    let length = screen.textContent.length;
     num2 = screen.textContent;
     screen.innerText = operate(num1, operator, num2);
     operation.forEach(button => {
