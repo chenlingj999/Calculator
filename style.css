@@ -37,9 +37,12 @@ body {
 
 }
 
-.zero-btn,
-.clear-btn {
+.zero-btn {
     grid-column: span 2;
+}
+
+.clear-btn {
+    grid-column: span 3;
 }
 
 .operators {
