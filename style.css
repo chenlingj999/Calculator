@@ -74,6 +74,8 @@ body {
 button {
     border-radius: 15px;
     transition-duration: 0.4s;
+    font-weight: bolder;
+    font-size: 28px;
 }
 
 button:hover:enabled {
