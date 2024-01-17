@@ -138,7 +138,7 @@ clear.addEventListener('click', () => {
     });
     numbers.forEach(button => {
         button.classList.remove("chaining");
-        btn.classList.remove("newEquation");
+        button.classList.remove("newEquation");
     });
     decimal.classList.remove("newEquation");
     num1 = '';
