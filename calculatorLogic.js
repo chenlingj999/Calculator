@@ -4,12 +4,13 @@ function countDecimal(num) {
 }
 
 function round(num) {
-    if (num.toString().length > 14) {
-        return NaN;
-    }
     if (num % 1) {
-        return (countDecimal(num) > 6) ? num.toFixed(6) : num;
+        if (num.toString().indexOf('.') >= 14 ) {
+            return NaN;
+        }
+        return num.toFixed(2);
     } else {
+        if (num.toString().length > 14) return NaN;
         return num;
     }
 }
