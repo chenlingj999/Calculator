@@ -132,7 +132,15 @@ const clear = document.querySelector(".clear-btn");
 
 clear.addEventListener('click', () => {
     screen.innerText = "";
-    operation.forEach(button => button.disabled = true);
+    operation.forEach(button => {
+        button.disabled = true;
+        button.classList.remove('chaining');
+    });
+    numbers.forEach(button => {
+        button.classList.remove("chaining");
+        btn.classList.remove("newEquation");
+    });
+    decimal.classList.remove("newEquation");
     num1 = '';
     num2 = '';
     operator = '';
