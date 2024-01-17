@@ -4,6 +4,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    background-color: rgb(95, 95, 95);
   }
 
 .calculator {
@@ -12,6 +13,8 @@ body {
     border: solid black;
     width: 400px;
     height: auto;
+    background-color: rgb(43, 42, 42);
+    border-radius: 20px;
 }
 
 .screen {
@@ -22,6 +25,8 @@ body {
     font-weight: bolder;
     font-size: 48px;
     height: 120px;
+    background-color: rgb(233, 233, 233);
+    border-radius: 10px;
 }
 
 .keypad {
@@ -34,7 +39,6 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
-
 }
 
 .zero-btn {
@@ -54,4 +58,24 @@ body {
 .keypad button {
     min-width: 80px;
     height: 80px;
+}
+
+.number,
+.decimal {
+    background-color: darkgrey;
+
+}
+
+.operator,
+.equal {
+    background-color: orange;
+}
+
+button {
+    border-radius: 15px;
+    transition-duration: 0.4s;
+}
+
+button:hover:enabled {
+    background-color: white;
 }
