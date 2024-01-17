@@ -126,6 +126,7 @@ equal.addEventListener('click', () => {
         button.classList.add("newEquation");
     });
     decimal.classList.add("newEquation");
+    backspace.classList.add("newEquation");
 });
 
 const clear = document.querySelector(".clear-btn");
@@ -163,4 +164,21 @@ decimal.addEventListener('click', () => {
         screen.innerText = "0.";
     }
     decimal.disabled = true;
+});
+
+const backspace = document.querySelector(".delete");
+
+backspace.addEventListener('click', () => {
+    if (screen.textContent == '') return;
+    if (backspace.classList.contains("newEquation")) {
+        screen.innerText = '';
+        backspace.classList.remove("newEquation");
+    } else {
+        screen.innerText = screen.innerText.slice(0, -1);
+        if (screen.innerText == "") {
+            operation.forEach(button => {
+                button.disabled = true;
+            });
+        }
+    }
 });
