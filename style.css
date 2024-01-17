@@ -73,11 +73,13 @@ body {
 
 button {
     border-radius: 15px;
-    transition-duration: 0.4s;
+    transition-duration: 0.3s;
     font-weight: bolder;
     font-size: 28px;
+    border-width: thick;
 }
 
 button:hover:enabled {
     background-color: white;
+    border-width: thin;
 }
