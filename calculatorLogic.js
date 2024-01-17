@@ -107,6 +107,7 @@ equal.addEventListener('click', () => {
     numbers.forEach(button => {
         button.classList.add("newEquation");
     });
+    decimal.classList.add("newEquation");
 });
 
 const clear = document.querySelector(".clear-btn");
@@ -122,6 +123,13 @@ clear.addEventListener('click', () => {
 const decimal = document.querySelector(".decimal");
 
 decimal.addEventListener('click', () => {
+    if (decimal.classList.contains("newEquation")) {
+        screen.innerText = '';
+        decimal.classList.remove("newEquation");
+        numbers.forEach(btn => {
+            btn.classList.remove("newEquation");
+        });
+    }
     if (screen.textContent) {
         screen.innerText = screen.textContent + '.';
     } else {
