@@ -1,5 +1,14 @@
+function countDecimal(num) {
+    const decimalIndex = num.toString().indexOf('.');
+    return decimalIndex >= 0 ? num.toString().length - decimalIndex - 1 : 0;
+}
+
 function round(num) {
-    return num.toFixed(6);
+    if (num % 1) {
+        return (countDecimal(num) > 6) ? num.toFixed(6) : num;
+    } else {
+        return num;
+    }
 }
 
 function add(num1, num2) {
