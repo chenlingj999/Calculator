@@ -19,8 +19,8 @@ let num2 = 0;
 let operator = '';
 
 function operate(num1, operator, num2) {
-    num1 = parseInt(num1);
-    num2 = parseInt(num2);
+    num1 = Number(num1);
+    num2 = Number(num2);
     switch(operator) {
         case "+":
             return add(num1, num2);
