@@ -4,6 +4,9 @@ function countDecimal(num) {
 }
 
 function round(num) {
+    if (num.toString().length > 14) {
+        return NaN;
+    }
     if (num % 1) {
         return (countDecimal(num) > 6) ? num.toFixed(6) : num;
     } else {
@@ -69,6 +72,7 @@ numbers.forEach(button => {
                 btn.classList.remove("newEquation");
             });
         }
+        if (screen.innerText.length >= 14) return;
         if (button.classList.contains("chaining")) {
             screen.innerText = button.textContent;
             numbers.forEach(btn => {
@@ -143,6 +147,7 @@ decimal.addEventListener('click', () => {
             btn.classList.remove("newEquation");
         });
     }
+    if (screen.innerText.length >= 13) return;
     if (screen.textContent) {
         screen.innerText = screen.textContent + '.';
     } else {
