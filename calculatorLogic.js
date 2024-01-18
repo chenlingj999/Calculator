@@ -143,6 +143,7 @@ clear.addEventListener('click', () => {
         button.classList.remove("newEquation");
     });
     decimal.classList.remove("newEquation");
+    decimal.disabled = false;
     num1 = '';
     num2 = '';
     operator = '';
@@ -173,6 +174,7 @@ backspace.addEventListener('click', () => {
     if (screen.textContent == '') return;
     if (backspace.classList.contains("newEquation")) {
         screen.innerText = '';
+        decimal.disabled = false;
         backspace.classList.remove("newEquation");
     } else {
         screen.innerText = screen.innerText.slice(0, -1);
@@ -180,6 +182,9 @@ backspace.addEventListener('click', () => {
             operation.forEach(button => {
                 button.disabled = true;
             });
+        }
+        if (!screen.innerText.includes('.') {
+            decimal.disabled = false;
         }
     }
 });
