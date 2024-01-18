@@ -183,7 +183,7 @@ backspace.addEventListener('click', () => {
                 button.disabled = true;
             });
         }
-        if (!screen.innerText.includes('.') {
+        if (!screen.innerText.includes('.')) {
             decimal.disabled = false;
         }
     }
