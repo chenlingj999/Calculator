@@ -28,6 +28,7 @@ function multiply(num1, num2) {
 }
 
 function divide(num1, num2) {
+    if (!num2) return "Division by 0 not allowed."
     return round(num1 / num2);
 }
 
